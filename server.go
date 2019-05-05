@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/evansmwendwa/uxp/db"
 	"github.com/evansmwendwa/uxp/router"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {
