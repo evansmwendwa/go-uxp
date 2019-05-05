@@ -24,7 +24,7 @@ func AddSpeaker(c echo.Context) error {
 	}
 
 	db := db.Session()
-	err := db.Create(&speaker).Error
+	err := db.FirstOrCreate(&speaker, model.Speaker{Name: speaker.Name}).Error
 
 	return response.APIResponse(err, c, speaker)
 }
