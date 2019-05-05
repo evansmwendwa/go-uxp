@@ -9,11 +9,14 @@ import (
 func Echo() *echo.Echo {
 	e := echo.New()
 
+	// web routes
 	e.GET("/", api.Home)
 
-	// speakers
-	e.GET("/speakers", api.GetSpeakers)
-	e.POST("/speakers", api.AddSpeaker)
+	// api routes
+	g := e.Group("/api/v1")
+
+	g.GET("/speakers", api.GetSpeakers)
+	g.POST("/speakers", api.AddSpeaker)
 
 	return e
 }
