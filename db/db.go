@@ -11,7 +11,7 @@ var session *gorm.DB
 var err error
 
 func init() {
-	db, err := gorm.Open("sqlite3", "data.sqlite")
+	db, err := gorm.Open("sqlite3", "data/data.sqlite")
 	if err != nil {
 		panic("DB connection error")
 	}
